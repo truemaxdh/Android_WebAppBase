@@ -2,6 +2,7 @@ package com.pgmaru.common;
 
 import android.os.Bundle;
 import android.view.Window;
+import android.view.WindowManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -27,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     requestWindowFeature(Window.FEATURE_NO_TITLE);
     setContentView(R.layout.activity_main);
+    if (getString(R.string.setting_keep_screen_on).equals("1")) {
+      getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+    }
 
     //
     // Admob
